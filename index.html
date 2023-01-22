@@ -1,0 +1,729 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Portfolio</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+.my_figures{
+	display: flex;
+	align-items: center;
+	justify-content: start;
+}
+
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+	
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="84d0302a-9c28-46bd-bfae-02dfc97a05ef" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/gradients_11.jpg" style="object-position:center 40%"/><h1 class="page-title">Portfolio</h1></header><div class="page-body"><p id="c8900fc4-b038-4cc1-b6ba-5e439a056059" class="">
+</p><div id="c070c170-3cac-4397-910b-ded8767ba793" class="column-list"><div id="af5c6311-cddc-4fb0-b303-70933388f624" style="width:33.333333333333336%" class="column"></div><div id="60491a07-702f-43db-910c-83cf2d931f9d" style="width:33.333333333333336%" class="column"></div><div id="024050d2-36bc-4642-aae5-a2bd90cbcf6f" style="width:33.33333333333333%" class="column"></div></div><blockquote id="b51c034b-2471-44f8-afa5-9da845da1ed1" class="">Antoine Maïstre-Rice, étudiant en deuxième année de BUT informatique a Nice.</blockquote><h2 id="1e86ae83-cbc6-4956-ab1e-72673af2ca69" class="">Mes sites internet (en groupe)</h2><h3 id="3f04f51a-810c-4f8b-8e54-0fdd6cab8265" class="">Première année</h3><p id="8e83742f-6cec-479e-9c4a-1f1152f53b9f" class="">Les deux sites ci dessous sont des sites de front-end et ont été réalisé au premier semestre de la première année de BUT informatique. (HTML / CSS uniquement)</p><p id="9b8eca6e-8c5e-4fb2-8df8-d8446514e7d5" class="">
+</p><p id="7fc67559-0aa4-413e-bf45-d3b8908c50af" class="">
+</p><blockquote id="cc259d6b-9e94-4467-b8bb-719182eb4aea" class=""><strong>Site de sondage</strong><figure id="0fe59edd-bd74-4092-bcc0-fb44f79e638c" class="image" style="text-align:left"><a href="Untitled.png"><img style="width:288px" src="Untitled.png"/></a></figure><p id="a86187a1-9375-41c2-8cee-6a309a9de2ae" class="">Lien du site : <a href="https://el-tonino.github.io/SAE-5/">https://el-tonino.github.io/SAE-5/</a>
+Lien du répo GitHub : <a href="https://github.com/el-tonino/SAE-5">https://github.com/el-tonino/SAE-5</a></p></blockquote><p id="213ba34f-51c9-4368-8a1a-50283034c933" class="">
+</p><p id="116a3aaa-659a-4a06-86a0-c6f048551acd" class="">
+</p><blockquote id="9a4bdd13-e498-4f7d-8c08-d2c3f16409d4" class=""><strong>Site documentaire sur le bitcoin</strong><figure class="my_figures" id="4c516b3b-e4cf-4dbb-b2fe-d681d1f5cde1" class="image"><a href="Untitled%201.png"><img style="width:288px" src="Untitled%201.png"/></a></figure><p id="ce23902e-7cd4-481d-8475-74b371de2086" class="">Lien du site : <a href="https://el-tonino.github.io/SAE6/">https://el-tonino.github.io/SAE6/</a>
+Lien du répo GitHub : <a href="https://github.com/el-tonino/SAE6/">https://github.com/el-tonino/SAE6/</a></p></blockquote><p id="f88eaad8-36f4-43dd-85d0-da5a34e0303b" class="">
+</p><p id="c8f3184f-4898-4761-be56-5964da22681c" class="">
+</p><h3 id="027fc058-079e-4766-a23e-c6176b3a59b8" class="">Deuxième année</h3><p id="ef119f47-4844-47e3-b631-ff81710b4ec8" class="">Le site ci-dessous a été réalisé lors du premier semestre de la deuxième année de BUT informatique, il s’agit d’un site avec un back-end en PHP et un front-end en HTML / CSS / JavaScript.</p><p id="13460f05-557e-4060-839d-7de46a9d8383" class="">
+</p><blockquote id="31a55871-8fc6-46be-a04e-6d63c6eec155" class=""><strong>Site de e-commerce fonctionnel (vente d’enceintes)
+</strong><figure class = "my_figures" id="6cbf67a4-eb3a-4b2f-8df2-726cd05976a2" class="image"><a href="Untitled%202.png"><img style="width:384px" src="Untitled%202.png"/></a></figure><p id="5e569244-21a2-4905-9d1e-791fb8575676" class="">Lien du site : <a href="http://seinksansgroove.studio/">http://seinksansgroove.studio/</a></p></blockquote><p id="5c23e266-59da-4b29-9ee1-a09412219144" class="">
+</p><h2 id="0da59a91-22dc-4835-85eb-561e516d1feb" class="">Mes projets JavaFX (en groupe)</h2><h3 id="b27bdd69-728d-409f-b27b-75253cb1d7e4" class=""><strong>KillBique</strong></h3><p id="620ebb85-7098-4654-8d8d-2c693398a7dd" class="">Il s’agit d’un projet GitLab privé, et je ne peux malheureusement pas le partager ici car les règles du jeu sont couvertes par des droits d’auteur, mais voici une description du projet : </p><p id="4bf551de-2a35-4ee3-a16f-6efc7631674c" class="">
+</p><p id="310531f1-abaf-4e8d-ae8e-082a4cee9265" class="">En semestre 1 de la deuxième année, en équipe de 8, nous avons eu pour mission de créer la version informatisée d’un jeu de plateau en java en utilisant la bibliothèque JavaFX.</p><p id="c1458349-4718-4600-8ad2-5569960cd376" class="">
+</p><blockquote id="09b30a03-08a9-4853-857b-157f69711310" class=""><strong>Principe </strong>
+
+KillBique est un 
+jeu de plis: chaque joueur choisit et joue une carte, et le joueur qui a
+ joué la plus forte carte gagne le pli. La valeur du pli est la somme 
+des &quot;têtes de biques&quot; illustrées sur les cartes, plus la valeur de la 
+carte la plus faible du pli. Les points gagnés s&#x27;accumulent sur une 
+piste de score.</blockquote><p id="b6bccfc4-5d91-4939-ac76-2a717e58f2f8" class="">
+</p><blockquote id="b0994189-f58c-4da2-99ce-f1cc9f1a2d74" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Version informatisée
+
+</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>La version informatisée du jeu se base sur une architecture Client - Serveur à l’aide des  sockets en java. 
+
+Le jeu a été programmé en respectant l’architecture <strong>MVC </strong>(Modèle, Vue, contrôleur)
+
+Il y a trois interfaces programmées avec JavaFX : 
+
+l’écran principal, l’interface du plateau de jeu
+les écrans personnels,l’interface des cartes de chaque joueur
+l’espion, interface pour avoir accès aux cartes de chaque joueur</blockquote><h3 id="30c48449-6f64-4446-8c20-f627cbc5e04d" class=""><details open=""><summary><strong>Interface graphique (cliquer pour voir les différentes pages)</strong></summary></details></h3><div class="indented"><h3 id="68a820e8-fa57-4f5a-b1b5-c25417cc8544" class=""><details open=""><summary>Plateau de jeu</summary></details></h3><div class="indented"><ul id="dfb3f9c4-23b1-4267-accc-275574c635be" class="toggle"><li><details open=""><summary>Page de démarrage</summary><figure id="4af51040-425c-46a7-9b1a-bcdf60b0725b" class="image"><a href="Untitled%203.png"><img style="width:1920px" src="Untitled%203.png"/></a></figure></details></li></ul><ul id="9594ddab-e041-45b7-9fd4-4cabe89da130" class="toggle"><li><details open=""><summary>Page de paramètres obligatoires</summary><figure id="612fa6dc-2b17-4758-9c17-9b87c7e7c7ce" class="image"><a href="Untitled%204.png"><img style="width:1920px" src="Untitled%204.png"/></a></figure></details></li></ul><ul id="2a389e1b-33bf-4045-a2aa-3e7cb3608f68" class="toggle"><li><details open=""><summary>Page de paramètres optionnels</summary><figure id="e008bab3-25d9-444f-9e5c-e26182992f9b" class="image"><a href="Untitled%205.png"><img style="width:730px" src="Untitled%205.png"/></a></figure></details></li></ul><ul id="c7684ae8-e869-4156-85af-6f536cfd4530" class="toggle"><li><details open=""><summary>Page de connexion des joueurs</summary><figure id="95025f73-2cc5-44be-b6e1-295e271c36d2" class="image"><a href="Untitled%206.png"><img style="width:1920px" src="Untitled%206.png"/></a></figure></details></li></ul><ul id="f1307869-2b9c-44b9-9da2-429fc566746a" class="toggle"><li><details open=""><summary>Page de jeu : paris</summary><figure id="e88daf60-ef8f-4557-a21f-74bb313d77a7" class="image"><a href="Untitled%207.png"><img style="width:1920px" src="Untitled%207.png"/></a></figure></details></li></ul><ul id="c80b7ae4-1f8a-4f17-92d7-784187c96c5d" class="toggle"><li><details open=""><summary>Page de jeu : plis</summary><figure id="00830d36-22c2-4299-9b8d-a3f8b1fa35ad" class="image"><a href="Untitled%208.png"><img style="width:440px" src="Untitled%208.png"/></a></figure></details></li></ul><ul id="433ceaa3-4c56-4aa9-9d83-6bf9c89f5b70" class="toggle"><li><details open=""><summary>Page de fin de partie</summary><figure id="e487672f-93bc-4c25-90a5-cd099c415157" class="image"><a href="Untitled%209.png"><img style="width:1920px" src="Untitled%209.png"/></a></figure></details></li></ul></div><h3 id="725e8767-c95d-4038-9077-cebdc8c42ce0" class=""><details open=""><summary>Écran personnel</summary></details></h3><div class="indented"><ul id="72662ba5-c4e1-4690-bb49-85c283415df6" class="toggle"><li><details open=""><summary>Page de choix de pseudo</summary><figure id="42ebd1ab-e72e-4c75-bb60-6af817774dc7" class="image"><a href="Untitled%2010.png"><img style="width:1920px" src="Untitled%2010.png"/></a></figure></details></li></ul><ul id="e483f968-18d1-46ca-83a2-4e924242bafe" class="toggle"><li><details open=""><summary>Fenêtre de paramètres</summary><figure id="d05307e2-59e2-4dde-ba7f-8c0a151feb4b" class="image"><a href="Untitled%2011.png"><img style="width:1920px" src="Untitled%2011.png"/></a></figure></details></li></ul><ul id="486b895a-4ce9-4c30-8c6d-47789a04c394" class="toggle"><li><details open=""><summary>Page de choix de la partie</summary><figure id="71d17cbe-389c-477a-951c-628672ee2fda" class="image"><a href="Untitled%2012.png"><img style="width:1920px" src="Untitled%2012.png"/></a></figure></details></li></ul><ul id="f5038c2d-cccc-40bd-a1af-256fa54fc87b" class="toggle"><li><details open=""><summary>Page de salle d’attente</summary><figure id="099af18c-1fa7-486e-8c3c-7a20b42baeb0" class="image"><a href="Untitled%2013.png"><img style="width:1912px" src="Untitled%2013.png"/></a></figure></details></li></ul><ul id="e9b5dd36-4379-4fac-817a-ed22341472e1" class="toggle"><li><details open=""><summary>Page de jeu</summary><figure id="a2d147c4-f96a-4333-884e-1ba0fffc2666" class="image"><a href="Untitled%2014.png"><img style="width:1920px" src="Untitled%2014.png"/></a></figure></details></li></ul><ul id="1c7c0482-15ee-4893-bb7d-5cb11e9ef316" class="toggle"><li><details open=""><summary>Page de jeu - jouer une carte</summary><figure id="6eedfaaa-721b-4034-9d05-8f7468c6216f" class="image"><a href="Untitled%2015.png"><img style="width:1920px" src="Untitled%2015.png"/></a></figure></details></li></ul><ul id="cc5c9703-9e59-45fd-9fd1-009d62b7abb4" class="toggle"><li><details open=""><summary>Page de fin de partie</summary><figure id="1b1744ef-7506-4c4f-86e1-8b656132a0a7" class="image"><a href="Untitled%2016.png"><img style="width:1920px" src="Untitled%2016.png"/></a></figure></details></li></ul><p id="0d690b59-fc72-4806-bd7e-dae74bacdbd7" class="">
+</p><p id="5932901a-025e-46f4-8807-5d18c0c43a02" class="">
+</p></div><p id="a110ae36-ac83-453a-afc2-3ec0415a2862" class="">
+</p></div><h2 id="0e907e78-3218-4aa1-96c1-97be1eedfc07" class="">Mes projets JavaFx (en solo)</h2><h3 id="aab24e1e-f5f3-4e92-998d-7cc413ad357b" class="">jeu d’échec</h3><p id="e78875cc-d9d6-4d0c-88ff-32a3f5b68aee" class="">J’ai crée lors de l’été 2022 un jeu d’échec jouable en JavaFX. Ce qui est implémenté est expliqué dans le projet GitHub.</p><p id="309456c0-949c-41d5-a54f-2a2081aa8ef1" class="">
+</p><blockquote id="e97234bb-08db-46b4-b1a4-54b066ae028b" class=""><strong>Jeu d’échecs JavaFX</strong><figure class="my_figures" id="ed28abf1-d976-41f5-9460-1d254d3411e6" class="image"><a href="Untitled%2017.png"><img style="width:288px" src="Untitled%2017.png"/></a></figure><p id="87ee225b-3a83-48a9-9d12-2d6d2931f780" class="">Lien du répo GitHub : <a href="https://github.com/el-tonino/javaFX-Chess/tree/main">https://github.com/el-tonino/javaFX-Chess/tree/main</a></p></blockquote><p id="1e4bc113-b1b5-44c8-87a3-8e36f36a1db3" class="">
+</p></div></article>
+
+<script>
+	let details = document.querySelectorAll("details");
+	details.forEach((detail) =>{
+		detail.removeAttribute("open");
+	});
+
+
+	var linkList = document.querySelectorAll('a');
+
+	for(var i in linkList){
+		linkList[i].setAttribute('target', '_blank');
+	}
+</script>
+</body></html>
